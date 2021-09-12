@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import backarrow from '../assets/images/svg/back-arrow.svg'
 import vcardLogo from '../assets/images/svg/virtual-card-logo.svg'
 import smallArrow from '../assets/images/svg/small-arrow.svg'
-import card1 from '../assets/images/svg/patricia-card-1.svg'
-import card2 from '../assets/images/svg/patricia-card-2.svg'
+import card1 from '../assets/images/jpeg-png/patricia-card.png'
+import card2 from '../assets/images/jpeg-png/patricia-card-2.png'
 import Activities from './Activities'
 
 const MainBoard = ({toggleActivities, setToggleActivities, setToggle}) => {
@@ -42,7 +42,7 @@ const MainBoard = ({toggleActivities, setToggleActivities, setToggle}) => {
                                 
                                 <div className="vcard-text">
                                     <h4>Virtual Card <img src={smallArrow} alt="" /></h4>
-                                    <p>Lorem Ipsum dolor sit amet</p>
+                                    <p>Lorem Ipsum</p>
                                 </div>
                             </div>
                             <div className="right-item">
@@ -215,26 +215,28 @@ const Wrapper = styled.section`
             .cards-wrapper{
                 display: flex;
                 align-items: center;
+                padding: 20px 0;
 
                 .left-card{
-                    width: 55%;
+                    width: 45%;
                 }
                 .right-card{
-                    width: 45%;
+                    width: 40%;
                     position: relative;
                     z-index: 1;
+                    margin-left: 20px;
                     
                     img{
-                        filter: blur(1.2px);
+                        filter: blur(1.1px);
                     }
 
                     :before{
                         content: '';
                         position: absolute;
-                        top: 22%;
-                        left: 35%;
-                        width: 60%;
-                        height: 55%;
+                        top: 7%;
+                        left: 32%;
+                        width: 80%;
+                        height: 80%;
                         background-color: #fff;
                         z-index: -1;
                         border-radius: 20px;
@@ -243,10 +245,10 @@ const Wrapper = styled.section`
                     :after{
                         content: '';
                         position: absolute;
-                        top: 27%;
-                        left: 52%;
-                        width: 50%;
-                        height: 46%;
+                        top: 11%;
+                        left: 50%;
+                        width: 70%;
+                        height: 70%;
                         background-color: #fff;
                         z-index: -2;
                         border-radius: 20px;
@@ -423,23 +425,41 @@ const Wrapper = styled.section`
                 padding: 10px;
             }
             .cards{
-                padding: 20px 10px;
+                padding: 20px 15px;
+
+                .virtual-card{
+                    .right-item{
+                        
+                    }
+                }
 
                 .cards-wrapper{
                     flex-direction: column;
+                    justify-content: initial;
+                    align-items: initial;
 
                     .left-card{
                         width: 100%;
                     }
                     .right-card{
-                        display: none;
+                        width: 100%;
+                        margin-left: 0;
+                        margin-top: 20px;
+
+                        :before, :after{
+                            display: none;
+                        }
                     }
                 }
 
                 .card-actions{
 
                     display: flex;
-                    justify-content: center;
+                    justify-content: space-between;
+
+                    button{
+                        width: 50%;
+                    }
 
                 }
 
@@ -464,7 +484,7 @@ const Wrapper = styled.section`
         .cards-info{
 
             .cards{
-
+                padding: 20px 10px;
                 .virtual-card{
                     
                     .left-item{
@@ -489,7 +509,7 @@ const Wrapper = styled.section`
                         
 
                         button{
-                            padding: 5px 4px;
+                            padding: 10px 4px;
                             font-size: 10px;
                         }
                     }
